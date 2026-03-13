@@ -1,11 +1,13 @@
-package apps
+package pipelines
 
-import utils.sparkSessionBuilder.spark
+import utils.sparkSessionBuilder.getSparkSession
 import org.apache.spark.sql.functions._
 
 object readData {
 
   def main(args: Array[String]): Unit = {
+
+    val spark = getSparkSession()
 
     //Reading CSV data
     val custDf = spark.read
